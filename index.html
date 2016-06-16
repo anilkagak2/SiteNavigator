@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" />
+    <script data-require="angular.js@1.5.5" data-semver="1.5.5" src="https://code.angularjs.org/1.5.5/angular.min.js"></script>
+    <script data-require="angular-route@1.4.2" data-semver="1.4.2" src="https://code.angularjs.org/1.4.2/angular-route.js"></script>
+    <script data-require="jquery@2.2.0" data-semver="2.2.0" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script id="twitter-wjs" type="text/javascript" async="" defer="" src="//platform.twitter.com/widgets.js"></script>
+    <script src="script.js"></script>
+    <script src="NavigationController.js"></script>
+    <script src="HomePageContentController.js"></script>
+    <!--<script src="testController.js"></script> -->
+    <title>Site Navigator</title>
+  </head>
+
+  <body ng-app="SiteNavigator" style="font-family : 'Lucida Console', 'Times New Roman', Times, serif" class="background">
+    <img src="https://avatars.githubusercontent.com/u/1572699?v=3" alt="Mike Wizowski" style="float:right;width:42px;height:42px;" />
+    <nav ng-controller="NavigationController">
+      <ul>
+        <li ng-repeat="navBarItem in navBarItems">
+          <a href="#/{{ navBarItem.link  }}">{{ navBarItem.name  }}</a>
+        </li>
+      </ul>
+    </nav>
+    <div>
+      <div ng-view=""></div>
+    </div>
+    <footer>
+      <div style="margin:0px; padding: 10px; display:flex">
+        <div>
+          <iframe src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&width=50&layout=button&action=like&show_faces=false&share=false&height=65&appId" width="50" height="65" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowtransparency="true"></iframe>
+        </div>
+        <div style="margin-left:4px">
+          <iframe id="twitter-widget-0" scrolling="no" frameborder="0" allowtransparency="true" class="twitter-follow-button twitter-follow-button-rendered" title="Twitter Follow Button" src="https://platform.twitter.com/widgets/follow_button.c5094533286f08172435cb9c1efe2915.en.html#dnt=false&id=twitter-widget-0&lang=en&screen_name=anilkagak2&show_count=false&show_screen_name=false&size=m&time=1465011217296" style="position: static; visibility: visible; width: 202px; height: 20px;" data-screen-name="anilkagak2"></iframe>
+        </div>
+      </div>
+    </footer>
+  </body>
+
+</html>
